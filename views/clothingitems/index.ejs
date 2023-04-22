@@ -1,0 +1,18 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <% if (user) { %>
+    <h2>All Items 👟</h2>
+    <ul>
+      <% clothingItems.forEach(clothingItems => { %>
+        <li>
+          👟
+          <a href="/clothingitems/<%= clothingitem._id %>"><%= clothingitem.name %></a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>
+
+<%- include('../partials/footer') %>
