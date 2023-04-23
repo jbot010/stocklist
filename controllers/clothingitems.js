@@ -1,4 +1,4 @@
-import { ClothingItem } from '../models/clothingitem.js'
+import { ClothingItem } from '../models/clothingItem.js'
 
 function index(req, res) {
   console.log("ALL CLOTHING ITEMS")
