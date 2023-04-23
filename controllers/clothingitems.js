@@ -25,7 +25,8 @@ function newClothingItem(req, res) {
 function create(req, res) {
   console.log("CREATE ITEM")
   req.body.owner = req.user.profile._id
-  console.log(req.body.name)
+  req.body.favorite = !!req.body.favorite
+  console.log(req.body.favorite)
   ClothingItem.create(req.body)  
   .then(clothingItem => {
     res.redirect('/clothingitems')
