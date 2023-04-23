@@ -53,9 +53,23 @@ function show(req, res) {
   })
 }
 
+function deleteClothingItem(req, res){
+  console.log("DELETE ITEM")
+  ClothingItem.findByIdAndDelete(req.params.clothingItemId)
+  .then(clothingItem => {
+    res.redirect('/clothingitems')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
+
 export {
   index,
   newClothingItem as new,
   create,
   show,
+  deleteClothingItem as delete,
 }

@@ -10,6 +10,11 @@
         <li>
           👟
           <a href="/clothingitems/<%= clothingItem._id %>"><%= clothingItem.name %></a>
+          <form action="/clothingitems/<%= clothingItem._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit">X</button>
+          </form>
         </li>
       <% }) %>
     </ul>
