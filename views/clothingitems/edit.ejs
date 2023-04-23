@@ -24,7 +24,7 @@
       type="checkbox" 
       name="favorite"
       id="favorite-checkbox"
-      <%= clothingItem.favorite ? "checked" : "" %>
+      <%= clothingItem.favorite ? 'checked' : '' %>
       >
     </label>
     <label for="status-select">Status:</label>
@@ -34,6 +34,14 @@
       <option value="Sell">Sell</option>
       <option value="Donate">Donate</option>
     </select>
+    <label for="sold-checkbox">
+      Sold?
+      <input 
+      type="checkbox" 
+      name="sold"
+      id="sold-checkbox"
+      <%= clothingItem.sold ? 'checked' : '' %>
+      >
     <button type="submit">Save Item</button>
   </form>
 </main>

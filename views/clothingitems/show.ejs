@@ -11,6 +11,8 @@
     <div><%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
     <div>Status: </div>
     <div><%= clothingItem.status %></div>
+    <div>Sold:</div>
+    <div><%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫'%></div>
     <a href="/clothingitems/<%= clothingItem._id %>/edit">
       <button>Edit Item</button>
     </a>
