@@ -1,7 +1,7 @@
 import { ClothingItem } from '../models/clothingitem.js'
 
 function index(req, res) {
-  console.log("CLOTHING ITEMS")
+  console.log("ALL CLOTHING ITEMS")
   ClothingItem.find({})
   .then(clothingItems => {
     res.render('clothingitems/index', {
@@ -22,7 +22,22 @@ function newClothingItem(req, res) {
   })
 }
 
+function create(req, res) {
+  console.log("CREATE ITEM")
+  req.body.owner = req.user.profile._id
+  console.log(req.body.name)
+  ClothingItem.create(req.body)  
+  .then(clothingItem => {
+    res.redirect('/clothingitems')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export {
   index,
   newClothingItem as new,
+  create,
 }

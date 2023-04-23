@@ -5,10 +5,10 @@
   <% if (user) { %>
     <h2>All Items 👟</h2>
     <ul>
-      <% clothingItems.forEach(clothingItems => { %>
+      <% clothingItems.forEach(clothingItem => { %>
         <li>
           👟
-          <a href="/clothingitems/<%= clothingitem._id %>"><%= clothingitem.name %></a>
+          <a href="/clothingitems/<%= clothingItem._id %>"><%= clothingItem.name %></a>
         </li>
       <% }) %>
     </ul>
