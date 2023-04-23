@@ -29,7 +29,7 @@ function create(req, res) {
   console.log(req.body.favorite)
   ClothingItem.create(req.body)  
   .then(clothingItem => {
-    res.redirect('/clothingitems')
+    res.redirect(`/clothingitems/${clothingItem._id}`)
   })
   .catch(err => {
     console.log(err)
