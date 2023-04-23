@@ -53,7 +53,7 @@ function show(req, res) {
   })
 }
 
-function deleteClothingItem(req, res){
+function deleteClothingItem(req, res) {
   console.log("DELETE ITEM")
   ClothingItem.findByIdAndDelete(req.params.clothingItemId)
   .then(clothingItem => {
@@ -65,6 +65,21 @@ function deleteClothingItem(req, res){
   })
 }
 
+function edit(req, res) {
+  console.log("EDIT ITEM")
+  ClothingItem.findById(req.params.clothingItemId)
+  .then(clothingItem => {
+    res.render('clothingitems/edit', {
+      clothingItem: clothingItem,
+      title: "Edit Item"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/clothingitems')
+  })
+}
+
 
 export {
   index,
@@ -72,4 +87,5 @@ export {
   create,
   show,
   deleteClothingItem as delete,
+  edit,
 }
