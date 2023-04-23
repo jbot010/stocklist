@@ -37,8 +37,25 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  console.log("SHOW ITEM VIEW")
+  ClothingItem.findById(req.params.clothingItemId)
+  .then(clothingItem => {
+    res.render('clothingitems/show', {
+      title: 'Item Detail',
+      clothingItem: clothingItem,
+      
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export {
   index,
   newClothingItem as new,
   create,
+  show,
 }

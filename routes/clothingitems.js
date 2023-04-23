@@ -13,6 +13,9 @@ router.get('/', isLoggedIn, clothingItemsCtrl.index)
 // GET localhost:3000/clothingitems/new
 router.get('/new', isLoggedIn, clothingItemsCtrl.new)
 
+// GET localhost:3000/clothingitems/:clothingitemId
+router.get('/:clothingItemId', isLoggedIn, clothingItemsCtrl.show)
+
 // POST localhost:3000/clothingitems
 router.post('/', clothingItemsCtrl.create)
 

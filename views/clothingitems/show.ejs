@@ -1,0 +1,18 @@
+<%- include('../partials/html-head') %>
+
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Name: </div>
+    <div><%= clothingItem.name %></div>
+    <div>Favorite: </div>
+    <div><%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
+    <div>Status: </div>
+    <div><%= clothingItem.status %></div>
+
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
