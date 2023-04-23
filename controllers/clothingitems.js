@@ -15,6 +15,14 @@ function index(req, res) {
   })
 }
 
+function newClothingItem(req, res) {
+  console.log("NEW ITEM VIEW");
+  res.render('clothingitems/new', {
+    title: "Add Item"
+  })
+}
+
 export {
-  index
+  index,
+  newClothingItem as new,
 }

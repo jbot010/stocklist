@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/clothingitems" method="POST">
+    <label for="clothingitems-select">Name:</label>
+    <select name="name" id="clothingitems-select">
+      <option value="Tops">Tops</option>
+      <option value="Bottoms">Bottoms</option>
+      <option value="Outerwear">Outerwear</option>
+      <option value="Shoes">Shoes</option>
+      <option value="Accessories">Accessories</option>
+    </select>
+
+
+
+
+    <button type="submit">Add Item</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>
