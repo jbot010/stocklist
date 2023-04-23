@@ -8,6 +8,13 @@
     <ul>
       <% brands.forEach(function(brand) { %>
         <option><%= brand.name %></option>
+        <form 
+        action="/brands/<%= brand._id %>?_method=DELETE"
+        class="delete-form"
+        method="POST"
+        >
+        <button type="submit">🚫</button>
+        </form>
       <% }) %>
     </ul>
   </p>

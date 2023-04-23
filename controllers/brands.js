@@ -28,7 +28,19 @@ function create(req, res) {
   })
 }
 
+function deleteBrand(req, res) {
+  Brand.findByIdAndDelete(req.params.brandId)
+  .then(brand => {
+    res.redirect('/brands/new')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/brands/new")
+  })
+}
+
 export {
   newBrand as new,
   create,
+  deleteBrand as delete,
 }
