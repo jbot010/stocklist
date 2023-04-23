@@ -19,11 +19,16 @@ router.get('/:clothingItemId', isLoggedIn, clothingItemsCtrl.show)
 // GET localhost:3000/clothingitems/:clothingItemId/edit
 router.get('/:clothingItemId/edit', isLoggedIn, clothingItemsCtrl.edit)
 
+// PUT localhost:3000/clothingitems/:clothingItemId
+router.put('/:clothingItemId', isLoggedIn, clothingItemsCtrl.update)
+
 // POST localhost:3000/clothingitems
 router.post('/', isLoggedIn, clothingItemsCtrl.create)
 
 // DELETE localhost:3000/clothingitems/:clothingItemId
 router.delete('/:clothingItemId', isLoggedIn, clothingItemsCtrl.delete)
+
+
 
 export {
   router

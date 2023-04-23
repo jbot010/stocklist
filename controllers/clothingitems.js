@@ -80,6 +80,22 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  console.log("UPDATE ITEM!")
+  req.body.favorite = !!req.body.favorite
+  for (let key in req.body) {
+    if(req.body[key] === "") delete req.body[key]
+  }
+  ClothingItem.findByIdAndUpdate(req.params.clothingItemId, req.body, {new: true})
+  .then(clothingItem => {
+    res.redirect(`/clothingitems/${clothingItem._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/clothingitems')
+  })
+}
+
 
 export {
   index,
@@ -88,4 +104,5 @@ export {
   show,
   deleteClothingItem as delete,
   edit,
+  update
 }
