@@ -1,0 +1,25 @@
+<%- include('../partials/html-head') %>
+
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <p>Please first ensure that the Brand is not in the list
+    <ul>
+      <% brands.forEach(function(brand) { %>
+        <option><%= brand.name %></option>
+      <% }) %>
+    </ul>
+  </p>
+  <form 
+    id="new-brand-form" 
+    action="/brands" 
+    method="POST"
+    >
+    <label for="brands-input">Name:</label>
+    <input type="text" name="name" id="name-input">
+    <button type="submit">Add Brand</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>
