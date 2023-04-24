@@ -6,17 +6,27 @@
   <h1><%= title %></h1>
   <section>
     <div>Name: </div>
-    <div><%= clothingItem.name %></div>
+    <div><%= clothingItem.name %>
+      <span><%= 
+        clothingItem.name === 'Tops' && '👕' 
+        || clothingItem.name === 'Bottoms' && '👖' 
+        || clothingItem.name === 'Outerwear' && '🧥' 
+        || clothingItem.name === 'Shoes' && '👟' 
+        || clothingItem.name === 'Accessories' && '🧢' 
+        || ''%></span>
+    </div>
+    <div>Description: </div>
+    <div><%= clothingItem.description %></div>
     <div>Favorite: </div>
     <div><%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
     <div>Status: </div>
-    <div><%= clothingItem.status %></div>
+    <div><%= clothingItem.status === 'Keep' && 'Keep ❤️' ||  clothingItem.status === 'Sell' && 'Sell 💲' || clothingItem.status === 'Donate' && 'Donate ♻️' || '' %></div>
     <div>Sold:</div>
     <div><%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫'%></div>
     <div>Brand:</div>
     <% clothingItem.brands.forEach(brandType => { %>
       <%= brandType.name %>
-   <% }) %>
+    <% }) %>
     <form
       id="add-brand-to-item"
       action="/clothingitems/<%= clothingItem._id %>/brands"

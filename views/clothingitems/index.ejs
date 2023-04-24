@@ -4,12 +4,20 @@
 
 <section>
   <% if (user) { %>
-    <h2>All Items 👟👕👖🧢</h2>
+    <h2>All Items 👕👖🧥👟🧢</h2>
     <ul>
       <% clothingItems.forEach(clothingItem => { %>
         <li>
-          👟
-          <a href="/clothingitems/<%= clothingItem._id %>"><%= clothingItem.name %></a>
+          <a href="/clothingitems/<%= clothingItem._id %>">
+            <span><%= 
+              clothingItem.name === 'Tops' && '👕' 
+              || clothingItem.name === 'Bottoms' && '👖' 
+              || clothingItem.name === 'Outerwear' && '🧥' 
+              || clothingItem.name === 'Shoes' && '👟' 
+              || clothingItem.name === 'Accessories' && '🧢' 
+              || ''%></span>
+            <%= clothingItem.name %>
+          </a>
           <form action="/clothingitems/<%= clothingItem._id %>?_method=DELETE"
             method="POST"
           >

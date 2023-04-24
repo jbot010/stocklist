@@ -8,6 +8,7 @@ const clothingItemSchema = new Schema({
     type: String,
     enum: ['Tops', 'Bottoms', 'Outerwear', 'Shoes', 'Accessories']
   },
+  description: String,
   favorite: Boolean,
   sold: Boolean,
   status: {

@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import * as clothingItemsCtrl from '../controllers/clothingItems.js'
+import * as clothingItemsCtrl from '../controllers/clothingitems.js'
 import { isLoggedIn } from '../middleware/middleware.js'
 
 
