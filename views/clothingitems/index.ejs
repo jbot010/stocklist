@@ -17,6 +17,7 @@
               || clothingItem.name === 'Accessories' && '🧢' 
               || ''%></span>
             <%= clothingItem.name %>
+            <%= clothingItem.description %>
           </a>
           <form action="/clothingitems/<%= clothingItem._id %>?_method=DELETE"
             method="POST"
