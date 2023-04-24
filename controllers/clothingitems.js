@@ -1,4 +1,5 @@
 import { ClothingItem } from '../models/clothingItem.js'
+import { Brand } from '../models/brand.js'
 
 function index(req, res) {
   console.log("ALL CLOTHING ITEMS")
@@ -40,11 +41,15 @@ function create(req, res) {
 function show(req, res) {
   console.log("SHOW ITEM VIEW")
   ClothingItem.findById(req.params.clothingItemId)
+  .populate('brands')
   .then(clothingItem => {
-    res.render('clothingitems/show', {
-      title: 'Item Detail',
-      clothingItem: clothingItem,
-      
+    Brand.find({_id: {$nin: clothingItem.brands}})
+    .then(brands => {
+      res.render('clothingitems/show', {
+        title: 'Item Detail',
+        clothingItem: clothingItem,
+        brands: brands,
+      })
     })
   })
   .catch(err => {
@@ -97,6 +102,26 @@ function update(req, res) {
   })
 }
 
+function addToBrand(req, res) {
+  console.log("ADD BRAND!")
+  ClothingItem.findById(req.params.clothingItemId)
+  .then(clothingItem => {
+    clothingItem.brands.push(req.body.brandId)
+    clothingItem.save()
+    .then(() => {
+      res.redirect(`/clothingitems/${clothingItem._id}`)      
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/clothingitems')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/clothingitems')
+  })
+}
+
 
 export {
   index,
@@ -105,5 +130,6 @@ export {
   show,
   deleteClothingItem as delete,
   edit,
-  update
+  update,
+  addToBrand,
 }
