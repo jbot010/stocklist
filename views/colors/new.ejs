@@ -1,0 +1,32 @@
+<%- include('../partials/html-head') %>
+
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <p>Please first ensure that the Color is not in the list
+    <ul>
+      <% colors.forEach(function(color) { %>
+        <option><%= color.name %></option>
+        <form 
+        action="/colors/<%= color._id %>?_method=DELETE"
+        class="delete-form"
+        method="POST"
+        >
+        <button type="submit">🚫</button>
+        </form>
+      <% }) %>
+    </ul>
+  </p>
+  <form 
+    id="new-color-form" 
+    action="/colors" 
+    method="POST"
+    >
+    <label for="colors-input">Name:</label>
+    <input type="text" name="name" id="name-input">
+    <button type="submit">Add Color</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

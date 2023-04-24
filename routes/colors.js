@@ -5,6 +5,12 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
+// GET localhost:3000/colors/new
+router.get('/new', isLoggedIn, colorsCtrl.new)
+
+// POST localhost:3000/colors
+router.post('/', isLoggedIn, colorsCtrl.create)
+
 
 export {
   router

@@ -1,4 +1,4 @@
-import { Brand } from "../models/brand.js";
+import { Brand } from "../models/brand.js"
 
 function newBrand(req, res) {
   console.log("NEW BRAND VIEW!")

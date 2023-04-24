@@ -1,0 +1,37 @@
+import { Color } from "../models/color.js"
+
+function newColor(req, res) {
+  console.log("NEW COLOR VIEW!")
+  Color.find({})
+  .then(colors => {
+    res.render('colors/new', {
+      title: 'Add Brand',
+      colors: colors,
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/clothingitems")
+  })
+}
+
+function create(req, res) {
+  console.log("CREATE NEW COLOR")
+  console.log(req.body)
+  Color.create(req.body)
+  .then(color => {
+    res.redirect('/colors/new')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/clothingitems")
+  })
+}
+
+
+
+export {
+  newColor as new,
+  create,
+
+}
