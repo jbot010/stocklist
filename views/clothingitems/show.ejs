@@ -22,7 +22,7 @@
     <div>Status: </div>
     <div><%= clothingItem.status === 'Keep' && 'Keep ❤️' ||  clothingItem.status === 'Sell' && 'Sell 💲' || clothingItem.status === 'Donate' && 'Donate ♻️' || '' %></div>
     <div>Sold:</div>
-    <div><%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫'%></div>
+    <div><%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
     <div>Brand(s):</div>
     <% clothingItem.brands.forEach(brandType => { %>
       <%= brandType.name %>

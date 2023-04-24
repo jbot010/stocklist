@@ -5,7 +5,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-//GET localhost:3000/brands/new
+// GET localhost:3000/brands/new
 router.get('/new', isLoggedIn, brandsCtrl.new)
 
 // POST localhost:3000/brands

@@ -21,8 +21,10 @@ import'./config/passport.js'
 // import routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
-import { router as clothingItemsRouter } from "./routes/clothingitems.js";
-import { router as brandsRouter } from "./routes/brands.js";
+import { router as clothingItemsRouter } from "./routes/clothingitems.js"
+import { router as brandsRouter } from "./routes/brands.js"
+import { router as colorsRouter } from "./routes/colors.js"
+
 
 // create the express app
 const app = express()
@@ -65,6 +67,8 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/clothingitems', clothingItemsRouter)
 app.use('/brands', brandsRouter)
+app.use('/colors', colorsRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
