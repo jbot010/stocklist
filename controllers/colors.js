@@ -28,10 +28,19 @@ function create(req, res) {
   })
 }
 
-
+function deleteColor(req, res) {
+  Color.findByIdAndDelete(req.params.colorId)
+  .then(color => {
+    res.redirect('/colors/new')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/colors/new")
+  })
+}
 
 export {
   newColor as new,
   create,
-
+  deleteColor as delete,
 }

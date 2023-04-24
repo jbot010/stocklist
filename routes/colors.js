@@ -11,6 +11,8 @@ router.get('/new', isLoggedIn, colorsCtrl.new)
 // POST localhost:3000/colors
 router.post('/', isLoggedIn, colorsCtrl.create)
 
+// DELETE localhost:3000/colors/:colorId
+router.delete('/:colorId', isLoggedIn, colorsCtrl.delete)
 
 export {
   router
