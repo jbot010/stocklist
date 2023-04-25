@@ -65,7 +65,7 @@ app.use(passDataToView)
 // mount imported routes
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
-app.use('/clothingitems', clothingItemsRouter)
+app.use('/clothingItems', clothingItemsRouter)
 app.use('/brands', brandsRouter)
 app.use('/colors', colorsRouter)
 
