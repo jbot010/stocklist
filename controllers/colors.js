@@ -11,7 +11,7 @@ function newColor(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/clothingitems")
+    res.redirect("/clothingItems")
   })
 }
 
@@ -24,7 +24,7 @@ function create(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/clothingitems")
+    res.redirect("/clothingItems")
   })
 }
 

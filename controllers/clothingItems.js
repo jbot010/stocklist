@@ -41,7 +41,7 @@ function create(req, res) {
     clothingItem.brands.push(req.body.brandId)
     clothingItem.colors.push(req.body.colorId)
     clothingItem.save() 
-    res.redirect(`/clothingitems/${clothingItem._id}`)
+    res.redirect(`/clothingItems/${clothingItem._id}`)
   })
   .catch(err => {
     console.log(err)
@@ -58,7 +58,7 @@ function show(req, res) {
   ])
     .then(clothingItem => {
         console.log(clothingItem.colors, clothingItem.brands, "SHOW ME THE COLORS")
-        res.render('clothingitems/show', {
+        res.render('clothingItems/show', {
           title: 'Item Detail',
           clothingItem: clothingItem,
           colors: clothingItem.colors,
@@ -76,7 +76,7 @@ function deleteClothingItem(req, res) {
   console.log("DELETE ITEM")
   ClothingItem.findByIdAndDelete(req.params.clothingItemId)
   .then(clothingItem => {
-    res.redirect('/clothingitems')
+    res.redirect('/clothingItems')
   })
   .catch(err => {
     console.log(err)
@@ -88,14 +88,14 @@ function edit(req, res) {
   console.log("EDIT ITEM")
   ClothingItem.findById(req.params.clothingItemId)  
   .then(clothingItem => {
-    res.render('clothingitems/edit', {
+    res.render('clothingItems/edit', {
       clothingItem: clothingItem,
       title: "Edit Item"
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/clothingitems')
+    res.redirect('/clothingItems')
   })
 }
 
@@ -108,11 +108,11 @@ function update(req, res) {
   }
   ClothingItem.findByIdAndUpdate(req.params.clothingItemId, req.body, {new: true})
   .then(clothingItem => {
-    res.redirect(`/clothingitems/${clothingItem._id}`)
+    res.redirect(`/clothingItems/${clothingItem._id}`)
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/clothingitems')
+    res.redirect('/clothingItems')
   })
 }
 
@@ -123,16 +123,16 @@ function addToBrand(req, res) {
     clothingItem.brands.push(req.body.brandId)
     clothingItem.save()
     .then(() => {
-      res.redirect(`/clothingitems/${clothingItem._id}`)      
+      res.redirect(`/clothingItems/${clothingItem._id}`)      
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/clothingitems')
+      res.redirect('/clothingItems')
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/clothingitems')
+    res.redirect('/clothingItems')
   })
 }
 
@@ -143,16 +143,16 @@ function addToColor(req, res) {
     clothingItem.colors.push(req.body.colorId)
     clothingItem.save()
     .then(() => {
-      res.redirect(`/clothingitems/${clothingItem._id}`)      
+      res.redirect(`/clothingItems/${clothingItem._id}`)      
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/clothingitems')
+      res.redirect('/clothingItems')
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/clothingitems')
+    res.redirect('/clothingItems')
   })
 }
 
@@ -164,16 +164,16 @@ function updateBrand(req, res) {
     clothingItem.brands.push(req.body.brandId)
     clothingItem.save()
     .then(() => {
-      res.redirect(`/clothingitems/${clothingItem._id}`)
+      res.redirect(`/clothingItems/${clothingItem._id}`)
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/clothingitems')
+      res.redirect('/clothingItems')
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/clothingitems')
+    res.redirect('/clothingItems')
   })
 }
 

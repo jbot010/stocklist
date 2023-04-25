@@ -5,33 +5,33 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-// ALL ROUTES in this file start with localhost:3000/clothingitems
+// ALL ROUTES in this file start with localhost:3000/clothingItems
 
-// GET localhost:3000/clothingitems
+// GET localhost:3000/clothingItems
 router.get('/', isLoggedIn, clothingItemsCtrl.index)
 
-// GET localhost:3000/clothingitems/new
+// GET localhost:3000/clothingItems/new
 router.get('/new', isLoggedIn, clothingItemsCtrl.new)
 
-// GET localhost:3000/clothingitems/:clothingItemId
+// GET localhost:3000/clothingItems/:clothingItemId
 router.get('/:clothingItemId', isLoggedIn, clothingItemsCtrl.show)
 
-// GET localhost:3000/clothingitems/:clothingItemId/edit
+// GET localhost:3000/clothingItems/:clothingItemId/edit
 router.get('/:clothingItemId/edit', isLoggedIn, clothingItemsCtrl.edit)
 
-// PUT localhost:3000/clothingitems/:clothingItemId
+// PUT localhost:3000/clothingItems/:clothingItemId
 router.put('/:clothingItemId', isLoggedIn, clothingItemsCtrl.update)
 
-// POST localhost:3000/clothingitems
+// POST localhost:3000/clothingItems
 router.post('/', isLoggedIn, clothingItemsCtrl.create)
 
-// POST localhost:3000/clothingitems/:clothingItemId/brands
+// POST localhost:3000/clothingItems/:clothingItemId/brands
 router.post('/:clothingItemId/brands', isLoggedIn, clothingItemsCtrl.addToBrand)
 
-// PATCH localhost:3000/clothingitems/:clothingItemId/updatebrands
+// PATCH localhost:3000/clothingItems/:clothingItemId/updatebrands
 router.patch('/clothingItemId/updatebrands', isLoggedIn, clothingItemsCtrl.updateBrand)
 
-// DELETE localhost:3000/clothingitems/:clothingItemId
+// DELETE localhost:3000/clothingItems/:clothingItemId
 router.delete('/:clothingItemId', isLoggedIn, clothingItemsCtrl.delete)
 
 
