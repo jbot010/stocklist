@@ -120,6 +120,9 @@ function update(req, res) {
   }
   ClothingItem.findByIdAndUpdate(req.params.clothingItemId, req.body, {new: true})
   .then(clothingItem => {
+    clothingItem.brands = [req.body.brandId]
+    clothingItem.colors = [req.body.colorId]
+    clothingItem.save()
     res.redirect(`/clothingItems/${clothingItem._id}`)
   })
   .catch(err => {
