@@ -21,7 +21,7 @@ import'./config/passport.js'
 // import routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
-import { router as clothingItemsRouter } from "./routes/clothingitems.js"
+import { router as clothingItemsRouter } from "./routes/clothingItems.js"
 import { router as brandsRouter } from "./routes/brands.js"
 import { router as colorsRouter } from "./routes/colors.js"
 
