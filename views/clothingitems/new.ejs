@@ -38,6 +38,18 @@
       <option value="Sell">Sell</option>
       <option value="Donate">Donate</option>
     </select>
+    <div>Color(s):</div>
+    <select name="colorId" id="color-select">
+      <% colors.forEach(color => { %>
+        <option value="<%= color._id %>"><%= color.name %></option>
+    <% }) %>
+    </select>
+    <div>Brand(s):</div>
+    <select name="brandId" id="brand-select">
+      <% brands.forEach(brand => { %>
+        <option value="<%= brand._id %>"><%= brand.name %></option>
+    <% }) %>
+    </select>
     <button type="submit">Add Item</button>
   </form>
 </main>

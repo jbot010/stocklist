@@ -5,7 +5,7 @@ function newColor(req, res) {
   Color.find({})
   .then(colors => {
     res.render('colors/new', {
-      title: 'Add Brand',
+      title: 'Add Color',
       colors: colors,
     })
   })

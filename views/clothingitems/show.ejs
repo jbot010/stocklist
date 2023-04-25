@@ -23,26 +23,17 @@
     <div><%= clothingItem.status === 'Keep' && 'Keep ❤️' ||  clothingItem.status === 'Sell' && 'Sell 💲' || clothingItem.status === 'Donate' && 'Donate ♻️' || '' %></div>
     <div>Sold:</div>
     <div><%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
+    <div>Color(s):</div>
+      <% colors.forEach(color=> { %>
+        <%= color.name %>
+     <% }) %>
     <div>Brand(s):</div>
-    <% clothingItem.brands.forEach(brandType => { %>
-      <%= brandType.name %>
-    <% }) %>
-    <form
-      id="add-brand-to-item"
-      action="/clothingitems/<%= clothingItem._id %>/brands"
-      method="POST"
-    >
-      <select name="brandId" id="brand-select">
-        <% brands.forEach(brand => { %>
-          <option value="<%= brand._id %>"><%= brand.name %></option>
-      <% }) %>
-      </select>
-      <button type="submit">Add Brand</button>
-    </form>
+    <% brands.forEach(brand=> { %>
+      <%= brand.name %>
+   <% }) %>
     <a href="/clothingitems/<%= clothingItem._id %>/edit">
       <button>Edit Item</button>
     </a>
-
   </section>
 </main>
 

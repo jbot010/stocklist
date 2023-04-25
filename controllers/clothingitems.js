@@ -1,5 +1,6 @@
 import { ClothingItem } from '../models/clothingItem.js'
 import { Brand } from '../models/brand.js'
+import { Color } from '../models/color.js'
 
 function index(req, res) {
   console.log("ALL CLOTHING ITEMS")
@@ -7,7 +8,7 @@ function index(req, res) {
   .then(clothingItems => {
     res.render('clothingitems/index', {
       clothingItems,
-      title: "All Items"
+      title: "All Items",
     })
   })
   .catch(err => {
@@ -18,8 +19,16 @@ function index(req, res) {
 
 function newClothingItem(req, res) {
   console.log("NEW ITEM VIEW");
-  res.render('clothingitems/new', {
-    title: "Add Item"
+  Brand.find()
+  .then(brands => {
+    Color.find()
+    .then(colors => {
+      res.render('clothingitems/new', {
+        title: 'Add Item',
+        brands: brands,
+        colors: colors,
+      })
+    })
   })
 }
 
@@ -27,9 +36,11 @@ function create(req, res) {
   console.log("CREATE ITEM")
   req.body.owner = req.user.profile._id
   req.body.favorite = !!req.body.favorite
-  console.log(req.body.favorite)
   ClothingItem.create(req.body)  
   .then(clothingItem => {
+    clothingItem.brands.push(req.body.brandId)
+    clothingItem.colors.push(req.body.colorId)
+    clothingItem.save() 
     res.redirect(`/clothingitems/${clothingItem._id}`)
   })
   .catch(err => {
@@ -41,22 +52,25 @@ function create(req, res) {
 function show(req, res) {
   console.log("SHOW ITEM VIEW")
   ClothingItem.findById(req.params.clothingItemId)
-  .populate('brands')
-  .then(clothingItem => {
-    Brand.find({_id: {$nin: clothingItem.brands}})
-    .then(brands => {
-      res.render('clothingitems/show', {
-        title: 'Item Detail',
-        clothingItem: clothingItem,
-        brands: brands,
+  .populate([
+    {path: 'colors'},
+    {path: 'brands'}
+  ])
+    .then(clothingItem => {
+        console.log(clothingItem.colors, clothingItem.brands, "SHOW ME THE COLORS")
+        res.render('clothingitems/show', {
+          title: 'Item Detail',
+          clothingItem: clothingItem,
+          colors: clothingItem.colors,
+          brands: clothingItem.brands,          
+        })
       })
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect("/")
-  })
-}
+      .catch(err => {
+        console.log(err)
+        res.redirect("/")
+      })
+    }
+
 
 function deleteClothingItem(req, res) {
   console.log("DELETE ITEM")
@@ -72,7 +86,7 @@ function deleteClothingItem(req, res) {
 
 function edit(req, res) {
   console.log("EDIT ITEM")
-  ClothingItem.findById(req.params.clothingItemId)
+  ClothingItem.findById(req.params.clothingItemId)  
   .then(clothingItem => {
     res.render('clothingitems/edit', {
       clothingItem: clothingItem,
@@ -122,6 +136,46 @@ function addToBrand(req, res) {
   })
 }
 
+function addToColor(req, res) {
+  console.log('ADD COLOR!!')
+  ClothingItem.findById(req.params.clothingItemId)
+  .then(clothingItem => {
+    clothingItem.colors.push(req.body.colorId)
+    clothingItem.save()
+    .then(() => {
+      res.redirect(`/clothingitems/${clothingItem._id}`)      
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/clothingitems')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/clothingitems')
+  })
+}
+
+function updateBrand(req, res) {
+  console.log('UPDATE BRAND!')
+  ClothingItem.findById(req.params.clothingItemId)
+  .then(clothingItem => {
+    console.log(req.body.brandId)
+    clothingItem.brands.push(req.body.brandId)
+    clothingItem.save()
+    .then(() => {
+      res.redirect(`/clothingitems/${clothingItem._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/clothingitems')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/clothingitems')
+  })
+}
 
 export {
   index,
@@ -132,4 +186,6 @@ export {
   edit,
   update,
   addToBrand,
+  addToColor,
+  updateBrand,
 }

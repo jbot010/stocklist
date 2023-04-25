@@ -28,6 +28,9 @@ router.post('/', isLoggedIn, clothingItemsCtrl.create)
 // POST localhost:3000/clothingitems/:clothingItemId/brands
 router.post('/:clothingItemId/brands', isLoggedIn, clothingItemsCtrl.addToBrand)
 
+// PATCH localhost:3000/clothingitems/:clothingItemId/updatebrands
+router.patch('/clothingItemId/updatebrands', isLoggedIn, clothingItemsCtrl.updateBrand)
+
 // DELETE localhost:3000/clothingitems/:clothingItemId
 router.delete('/:clothingItemId', isLoggedIn, clothingItemsCtrl.delete)
 
