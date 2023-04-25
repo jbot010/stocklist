@@ -56,20 +56,20 @@ function show(req, res) {
     {path: 'colors'},
     {path: 'brands'}
   ])
-    .then(clothingItem => {
-        console.log(clothingItem.colors, clothingItem.brands, "SHOW ME THE COLORS")
-        res.render('clothingItems/show', {
-          title: 'Item Detail',
-          clothingItem: clothingItem,
-          colors: clothingItem.colors,
-          brands: clothingItem.brands,          
-        })
-      })
-      .catch(err => {
-        console.log(err)
-        res.redirect("/")
-      })
-    }
+  .then(clothingItem => {
+    console.log(clothingItem.colors, clothingItem.brands, "SHOW ME THE COLORS")
+    res.render('clothingItems/show', {
+      title: 'Item Detail',
+      clothingItem: clothingItem,
+      colors: clothingItem.colors,
+      brands: clothingItem.brands,          
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
 
 
 function deleteClothingItem(req, res) {
@@ -86,16 +86,22 @@ function deleteClothingItem(req, res) {
 
 function edit(req, res) {
   console.log("EDIT ITEM")
-  ClothingItem.findById(req.params.clothingItemId)  
+  ClothingItem.findById(req.params.clothingItemId)
+  .populate([
+    {path: 'colors'},
+    {path: 'brands'}
+  ])  
   .then(clothingItem => {
     res.render('clothingItems/edit', {
+      title: "Edit Item",
       clothingItem: clothingItem,
-      title: "Edit Item"
+      colors: clothingItem.colors,
+      brands: clothingItem.brands,
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/clothingItems')
+    res.redirect("/")
   })
 }
 

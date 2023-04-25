@@ -51,6 +51,13 @@
       <%= clothingItem.sold ? 'checked' : '' %>
       >
       </select>
+      <div>Color(s):</div>
+      <select name="colorId" id="color-select">
+        <% colors.forEach(color => { %>
+          <option value="<%= color._id %>"><%= color.name %></option>
+      <% }) %>
+      </select>
+  
     <button type="submit">Update Item</button>
   </form>
 </main>
