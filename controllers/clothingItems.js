@@ -92,11 +92,17 @@ function edit(req, res) {
     {path: 'brands'}
   ])  
   .then(clothingItem => {
-    res.render('clothingItems/edit', {
-      title: "Edit Item",
-      clothingItem: clothingItem,
-      colors: clothingItem.colors,
-      brands: clothingItem.brands,
+    Color.find({_id: {$nin: clothingItem.colors}})
+    .then(colors => {
+      Brand.find({_id: {$nin: clothingItem.brands}})
+      .then(brands => {
+        res.render('clothingItems/edit', {
+          title: "Edit Item",
+          clothingItem: clothingItem,
+          colors: colors,
+          brands: brands,
+        })
+      })
     })
   })
   .catch(err => {

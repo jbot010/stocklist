@@ -53,11 +53,22 @@
       </select>
       <div>Color(s):</div>
       <select name="colorId" id="color-select">
+        <% clothingItem.colors.forEach(color => { %>
+          <option value="<%= color._id %>"><%= color.name %></option>
+      <% }) %>
         <% colors.forEach(color => { %>
           <option value="<%= color._id %>"><%= color.name %></option>
       <% }) %>
       </select>
-  
+      <div>Brand(s):</div>
+      <select name="brandId" id="brand-select">
+        <% clothingItem.brands.forEach(brand => { %>
+          <option value="<%= brand._id %>"><%= brand.name %></option>
+      <% }) %>
+        <% brands.forEach(brand => { %>
+          <option value="<%= brand._id %>"><%= brand.name %></option>
+      <% }) %>
+      </select>
     <button type="submit">Update Item</button>
   </form>
 </main>
