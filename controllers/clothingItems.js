@@ -6,7 +6,7 @@ function index(req, res) {
   console.log("ALL CLOTHING ITEMS")
   ClothingItem.find({})
   .then(clothingItems => {
-    res.render('clothingitems/index', {
+    res.render('clothingItems/index', {
       clothingItems,
       title: "All Items",
     })
@@ -23,7 +23,7 @@ function newClothingItem(req, res) {
   .then(brands => {
     Color.find()
     .then(colors => {
-      res.render('clothingitems/new', {
+      res.render('clothingItems/new', {
         title: 'Add Item',
         brands: brands,
         colors: colors,
