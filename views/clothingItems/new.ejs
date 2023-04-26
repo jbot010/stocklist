@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-
+<link rel="stylesheet" href="/stylesheets/clothingItems/new.css" />
 <%- include('../partials/nav') %>
 
 <main>
@@ -50,7 +50,7 @@
         <option value="<%= brand._id %>"><%= brand.name %></option>
     <% }) %>
     </select>
-    <button type="submit">Add Item</button>
+    <button class="btns" type="submit">Add Item</button>
   </form>
 </main>
 

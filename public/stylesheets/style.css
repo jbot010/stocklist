@@ -70,38 +70,10 @@ a:hover {
   padding: 20px;
 }
 
-.all-items {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-around;
-  align-items: center;
-}
-
-.item-list {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-}
-
-#item-edit-btn, #item-delete-btn {
-  display: flex;
-}
-
-.item-btns {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-.info-body {
-  margin: 0 auto;
-}
-
 .btns {
   /* width: 100px;
   padding: 11px; */
-  margin-top: 10%;
+  /* margin-top: 10%; */
   border-radius: 0px;
   text-transform: capitalize;
   font-family: monospace;
@@ -111,4 +83,8 @@ a:hover {
 
 .btns:hover {
   background: white;
+}
+
+#description-input {
+  margin: 0 auto;
 }

@@ -1,0 +1,46 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* .item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+#item-edit-btn, #item-delete-btn {
+  display: flex;
+}
+
+.item-btns {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.info-item-container {
+  display: flex;
+  flex-direction: row;
+} */
+
+.info-item-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: space-around;
+}
+
+.info-item-btns {
+  display: flex;
+}

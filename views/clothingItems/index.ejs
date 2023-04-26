@@ -1,15 +1,15 @@
 <%- include('../partials/html-head') %>
-
+<link rel="stylesheet" href="/stylesheets/clothingItems/index.css" />
 <%- include('../partials/nav') %>
 
-<section class="all-items">
+<h2>All Items 👕👖🧥👟🧢</h2>
+<section class="flex-column info-item-container">
   <% if (user) { %>
-    <h2>All Items 👕👖🧥👟🧢</h2>
-    <ul class="item-list">
+    <ul class="flex-column">
       <% clothingItems.forEach(clothingItem => { %>
         <% if (clothingItem.owner.equals(user?.profile._id)) { %>
-          <li class="items">
-            <div>
+          <li class="flex-row">
+            <div class="flex-column info-item-btns">
               <span><%= 
               clothingItem.name === 'Tops' && '👕' 
               || clothingItem.name === 'Bottoms' && '👖' 
@@ -30,7 +30,7 @@
               </form>
               <% } %>
             </div>
-        <div class="info-body">
+        <div class="flex-row info-item-section">
           <div>Description: </div>
           <div><%= clothingItem.description %></div>
           <div>Favorite: </div>
