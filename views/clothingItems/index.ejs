@@ -7,7 +7,8 @@
     <h2>All Items 👕👖🧥👟🧢</h2>
     <ul>
       <% clothingItems.forEach(clothingItem => { %>
-        <li>
+        <% if (clothingItem.owner.equals(user?.profile._id)) { %>
+          <li>
           <a href="/clothingitems/<%= clothingItem._id %>">
             <span><%= 
               clothingItem.name === 'Tops' && '👕' 
@@ -19,12 +20,15 @@
             <%= clothingItem.name %>
             <%= clothingItem.description %>
           </a>
+          <% if (clothingItem.owner.equals(user?.profile._id)) { %>
           <form action="/clothingItems/<%= clothingItem._id %>?_method=DELETE"
             method="POST"
           >
             <button type="submit">X</button>
           </form>
+          <% } %>
         </li>
+          <% } %>
       <% }) %>
     </ul>
   <% } %>

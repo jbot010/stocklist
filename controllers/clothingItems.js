@@ -38,10 +38,12 @@ function create(req, res) {
   req.body.favorite = !!req.body.favorite
   ClothingItem.create(req.body)  
   .then(clothingItem => {
-    clothingItem.brands.push(req.body.brandId)
-    clothingItem.colors.push(req.body.colorId)
-    clothingItem.save() 
-    res.redirect(`/clothingItems/${clothingItem._id}`)
+    if (clothingItem.owner.equals(req.user.profile._id)) {
+      clothingItem.brands.push(req.body.brandId)
+      clothingItem.colors.push(req.body.colorId)
+      clothingItem.save()      
+    }
+    res.redirect('/clothingItems')
   })
   .catch(err => {
     console.log(err)

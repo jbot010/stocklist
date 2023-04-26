@@ -5,7 +5,7 @@
 <main>
   <h1><%= title %></h1>
   <section>
-    <div>Name: </div>
+    <div>Category: </div>
     <div><%= clothingItem.name %>
       <span><%= 
         clothingItem.name === 'Tops' && '👕' 
@@ -26,13 +26,15 @@
     <div>Color(s):</div>
       <% colors.forEach(color=> { %>
         <%= color.name %>
-     <% }) %>
+      <% }) %>
     <div>Brand(s):</div>
     <% brands.forEach(brand=> { %>
       <%= brand.name %>
-   <% }) %>
+    <% }) %>
+    <% if (clothingItem.owner.equals(user?.profile._id)) { %>
     <a href="/clothingItems/<%= clothingItem._id %>/edit">
       <button>Edit Item</button>
+    <% } %>
     </a>
   </section>
 </main>

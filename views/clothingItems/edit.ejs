@@ -69,7 +69,9 @@
           <option value="<%= brand._id %>"><%= brand.name %></option>
       <% }) %>
       </select>
-    <button type="submit">Update Item</button>
+      <% if (clothingItem.owner.equals(user?.profile._id)) { %>
+        <button type="submit">Update Item</button>
+      <% } %>
   </form>
 </main>
 
