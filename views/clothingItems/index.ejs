@@ -2,15 +2,15 @@
 
 <%- include('../partials/nav') %>
 
-<section class="all-item-list">
+<section class="all-items">
   <% if (user) { %>
     <h2>All Items 👕👖🧥👟🧢</h2>
-    <ul>
+    <ul class="item-list">
       <% clothingItems.forEach(clothingItem => { %>
         <% if (clothingItem.owner.equals(user?.profile._id)) { %>
-          <li>
-          <a href="/clothingitems/<%= clothingItem._id %>">
-            <span><%= 
+          <li class="items">
+            <div>
+              <span><%= 
               clothingItem.name === 'Tops' && '👕' 
               || clothingItem.name === 'Bottoms' && '👖' 
               || clothingItem.name === 'Outerwear' && '🧥' 
@@ -18,15 +18,33 @@
               || clothingItem.name === 'Accessories' && '🧢' 
               || ''%></span>
             <%= clothingItem.name %>
-            <%= clothingItem.description %>
-          </a>
-          <% if (clothingItem.owner.equals(user?.profile._id)) { %>
-          <form action="/clothingItems/<%= clothingItem._id %>?_method=DELETE"
-            method="POST"
-          >
-            <button type="submit">X</button>
-          </form>
-          <% } %>
+            <a href="/clothingitems/<%= clothingItem._id %>">
+              <button class="btns">Edit Item</button>
+            </a>
+            <% if (clothingItem.owner.equals(user?.profile._id)) { %>
+              <form action="/clothingItems/<%= clothingItem._id %>?_method=DELETE"
+                method="POST"
+                >
+                <button 
+                class="btns" type="submit">X</button>
+              </form>
+              <% } %>
+            </div>
+        <div class="info-body">
+          <div>Description: </div>
+          <div><%= clothingItem.description %></div>
+          <div>Favorite: </div>
+          <div><%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
+          <div>Status: </div>
+          <div><%= 
+          clothingItem.status === 'Keep' && 'Keep ❤️' 
+          ||  clothingItem.status === 'Sell' && 'Sell 💲' 
+          || clothingItem.status === 'Donate' && 'Donate ♻️' 
+          || '' %>
+        </div>
+        <div>Sold:</div>
+        <div><%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
+      </div>
         </li>
           <% } %>
       <% }) %>
