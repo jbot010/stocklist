@@ -13,14 +13,20 @@
         || clothingItem.name === 'Outerwear' && '🧥' 
         || clothingItem.name === 'Shoes' && '👟' 
         || clothingItem.name === 'Accessories' && '🧢' 
-        || ''%></span>
+        || ''%>
+      </span>
     </div>
     <div>Description: </div>
     <div><%= clothingItem.description %></div>
     <div>Favorite: </div>
     <div><%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
     <div>Status: </div>
-    <div><%= clothingItem.status === 'Keep' && 'Keep ❤️' ||  clothingItem.status === 'Sell' && 'Sell 💲' || clothingItem.status === 'Donate' && 'Donate ♻️' || '' %></div>
+    <div><%= 
+      clothingItem.status === 'Keep' && 'Keep ❤️' 
+      ||  clothingItem.status === 'Sell' && 'Sell 💲' 
+      || clothingItem.status === 'Donate' && 'Donate ♻️' 
+      || '' %>
+    </div>
     <div>Sold:</div>
     <div><%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
     <div>Color(s):</div>
@@ -32,8 +38,8 @@
       <%= brand.name %>
     <% }) %>
     <% if (clothingItem.owner.equals(user?.profile._id)) { %>
-    <a href="/clothingItems/<%= clothingItem._id %>/edit">
-      <button>Edit Item</button>
+      <a href="/clothingItems/<%= clothingItem._id %>/edit">
+        <button>Edit Item</button>
     <% } %>
     </a>
   </section>

@@ -9,7 +9,6 @@ I created an inventory app because moving is hard and no one likes it. With Stoc
 
 ## Getting Started
 
-
 ## [Trello Board](https://trello.com/b/CzHyKepp/stocklist "Trello Board")
 
 ## [Start your Stocklist Here](https://stocklist.fly.dev/ "Stocklist link")

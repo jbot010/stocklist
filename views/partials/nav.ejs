@@ -4,14 +4,18 @@
 </head>
 <body>
   <nav>
+    <div class="nav-links">
     <% if (user) { %>
       <a href="/clothingItems">All Items</a>
       <a href="/clothingItems/new">Add Item</a>
       <a href="/brands/new">Add Brands</a>
       <a href="/colors/new">Add Colors</a>
+    </div>
+    <div class="g-button">
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
       </a>
+    </div>
     <% } else { %>
       <div 
         id="g_id_onload"
@@ -24,7 +28,7 @@
         class="g_id_signin right"
         data-type="standard"
         data-size="large"
-        data-theme="outline"
+        data-theme="filled_blue"
         data-text="sign_in_with"
         data-shape="rectangular"
         data-logo_alignment="left"
