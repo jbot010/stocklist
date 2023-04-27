@@ -12,26 +12,9 @@
   flex-wrap: wrap;
 }
 
-/* .item-list {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
+h2 {
+  text-align: center;
 }
-
-#item-edit-btn, #item-delete-btn {
-  display: flex;
-}
-
-.item-btns {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-.info-item-container {
-  display: flex;
-  flex-direction: row;
-} */
 
 .info-item-section {
   display: flex;
@@ -43,4 +26,26 @@
 
 .info-item-btns {
   display: flex;
+  max-width: 50%;
+  min-width: 100px;
+  align-items: center;
+}
+
+.info-item-details {
+  max-width: 100%;
+  min-width: 200px;
+  margin-left: 20px;
+  line-height: 30px;
+}
+
+.info-item {
+  margin: 10px auto;
+  min-width: 400px;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.clothing-items-list {
+padding-left: 0
 }

@@ -5,10 +5,10 @@
 <h2>All Items 👕👖🧥👟🧢</h2>
 <section class="flex-column info-item-container">
   <% if (user) { %>
-    <ul class="flex-column">
+    <ul class="flex-column clothing-items-list">
       <% clothingItems.forEach(clothingItem => { %>
         <% if (clothingItem.owner.equals(user?.profile._id)) { %>
-          <li class="flex-row">
+          <li class="flex-row info-item">
             <div class="flex-column info-item-btns">
               <span><%= 
               clothingItem.name === 'Tops' && '👕' 
@@ -30,21 +30,17 @@
               </form>
               <% } %>
             </div>
-        <div class="flex-row info-item-section">
-          <div>Description: </div>
-          <div><%= clothingItem.description %></div>
-          <div>Favorite: </div>
-          <div><%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
-          <div>Status: </div>
-          <div><%= 
+        <div class="flex-column info-item-details">
+          <div>Description: <%= clothingItem.description %></div>
+          <div>Favorite: <%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
+          <div>Status: <%= 
           clothingItem.status === 'Keep' && 'Keep ❤️' 
           ||  clothingItem.status === 'Sell' && 'Sell 💲' 
           || clothingItem.status === 'Donate' && 'Donate ♻️' 
           || '' %>
         </div>
-        <div>Sold:</div>
-        <div><%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
-      </div>
+        <div>Sold: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
+        </div>
         </li>
           <% } %>
       <% }) %>
