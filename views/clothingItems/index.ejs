@@ -19,6 +19,8 @@
               || ''%></span>
             <%= clothingItem.name %>
             <a href="/clothingitems/<%= clothingItem._id %>">
+              <button class="btns">More Details</button>
+            <a href="/clothingitems/<%= clothingItem._id %>/edit">
               <button class="btns">Edit Item</button>
             </a>
             <% if (clothingItem.owner.equals(user?.profile._id)) { %>
