@@ -47,5 +47,19 @@ h2 {
 }
 
 .clothing-items-list {
-padding-left: 0
+  padding-left: 0
+}
+
+.icon-top {
+  display: flex;
+  justify-content: center;
+}
+
+.btns {
+  margin: 3px;
+  padding-top: 3px;
+}
+
+span.emoji {
+  font-size: 60px;
 }

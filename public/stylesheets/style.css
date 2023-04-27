@@ -15,8 +15,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   margin: 0;
 }
 
@@ -37,11 +36,16 @@ main {
   flex-direction: column;
 }
 
+h1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 #nav-content {
   display: flex;
   margin: auto;
 }
-
 
 #g-button {
   position: absolute;
@@ -58,7 +62,7 @@ main {
 .btns {
   border-radius: 0px;
   text-transform: capitalize;
-  font-family: monospace;
+  font-family:'Josefin Sans', sans-serif;
   font-size: 12px;
   background: #54b3d6;;
 }
