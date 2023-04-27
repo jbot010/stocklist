@@ -1,22 +1,25 @@
 ![Stocklist]( "stocklist-screenshot")
 
 # Stocklist
-An app for your home inventory
+Keeping track of your things can be challenging. With Stocklist, you can create an inventory of your home inventory. 
 
-Keeping track of your things can be challenging. With Stocklist, you can create an inventory of your clothes.
+Log in to view all your items. Add a new item to your Stocklist using the "Add Item" link in the nav bar. Or add brands and colors to the master list which can be accessed by multiple users.
 
-I created an inventory app because moving is hard and no one likes it. With Stocklist you'll be able to build your inventory and keep track of your items.
+Click "More Details" to view additional information about an item or click "Edit Item" to update options such as favorite or change the status of an item to "Keep/Sell/Donate". Use the X button to delete the item from your Stocklist.
+
+I created an inventory app because moving is hard and no one likes it. Having moved multiple times, it can be overwhelming to assess all your items and deciding what to keep, sell or donate. I made this app to track and organize items for the next big move.
 
 ## Getting Started
 
-## [Trello Board](https://trello.com/b/CzHyKepp/stocklist "Trello Board")
+### [Start your Stocklist here](https://stocklist.fly.dev/ "Stocklist link")
 
-## [Start your Stocklist Here](https://stocklist.fly.dev/ "Stocklist link")
+Project planning [here](https://trello.com/b/CzHyKepp/stocklist "Trello Board")
 
-## Attributions
+## Credits 🙏🏽
 
 ### Images 🖼️:
-* [Favicon](https://icons8.com/icon/tWqXz4h30AJ4/sneaker"icons8")
+* [Favicon](https://icons8.com/icon/tWqXz4h30AJ4/sneaker)
+* [Icons](https://icons8.com/icon/set/clothing/cotton)
 
 
 ## Technologies used 💻
@@ -24,15 +27,15 @@ I created an inventory app because moving is hard and no one likes it. With Stoc
 * Express
 * Mongoose
 * MongoDB
+* JavaScript
 * HTML
 * CSS
-* JavaScript
 * Git
 * Chrome DevTools
 
-## Ice Box 🔮
-* Share Stocklist profile
-* Compare Stocklist with other users
-* Add other categories
-* Add links of items in details
-* Add comments for items
+## Next Steps 🔮
+- [ ] Share Stocklist profile
+- [ ] Compare Stocklist with other users
+- [ ] Add other categories
+- [ ] Add links of items in details
+- [ ] Add comments for items

@@ -2,7 +2,8 @@
 <link rel="stylesheet" href="/stylesheets/clothingItems/index.css" />
 <%- include('../partials/nav') %>
 
-<h2>All Items 👕👖🧥👟🧢</h2>
+<h2>Your Items</h2>
+<h2>👕👖🧥👟🧢</h2>
 <section class="flex-column info-item-container">
   <% if (user) { %>
     <ul class="flex-column clothing-items-list">
@@ -51,7 +52,7 @@
           || clothingItem.status === 'Donate' && 'Donate ♻️' 
           || '' %>
         </div>
-        <div>Sold: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
+        <div>Sold/Donated: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
         </div>
         </li>
           <% } %>

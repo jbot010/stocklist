@@ -33,7 +33,7 @@
       || clothingItem.status === 'Donate' && 'Donate ♻️' 
       || '' %>
     </div>
-    <div>Sold: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
+    <div>Sold/Donated: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
     <% if (clothingItem.owner.equals(user?.profile._id)) { %>
       <a href="/clothingItems/<%= clothingItem._id %>/edit">
         <button id="edit-item-btn">Edit Item</button>
