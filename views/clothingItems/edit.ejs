@@ -28,7 +28,8 @@
     <label for="description-input">Description:</label>
     <input 
       type="text" 
-      name="description" 
+      name="description"
+      class="description-box"
       id="description-input"
       value="<%= clothingItem.description %>"
       required
@@ -77,7 +78,7 @@
       <% }) %>
       </select>
       <% if (clothingItem.owner.equals(user?.profile._id)) { %>
-        <button type="submit">Update Item</button>
+        <button class="btns" type="submit">Update Item</button>
       <% } %>
   </form>
 </main>

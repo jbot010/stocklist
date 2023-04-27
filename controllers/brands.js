@@ -1,4 +1,4 @@
-import { Brand } from "../models/brand.js"
+import { Brand } from '../models/brand.js'
 
 function newBrand(req, res) {
   Brand.find({})
@@ -10,7 +10,7 @@ function newBrand(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/clothingItems")
+    res.redirect('/clothingItems')
   })
 }
 
@@ -21,7 +21,7 @@ function create(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/clothingItems")
+    res.redirect('/clothingItems')
   })
 }
 
@@ -32,7 +32,7 @@ function deleteBrand(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/brands/new")
+    res.redirect('/brands/new')
   })
 }
 

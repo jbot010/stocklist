@@ -9,7 +9,7 @@
   <img class="main-icons" src="/images/sneaker-64.png" alt="sneaker icon">
   <img class="main-icons" src="/images/backpack-64.png" alt="backpack icon">
 </div>
-<h1>Your Items</h1>
+<h1><%= `${user.profile.name}'s Items` %></h1>
 <section class="flex-column info-item-container">
   <% if (user) { %>
     <ul class="flex-column clothing-items-list">
