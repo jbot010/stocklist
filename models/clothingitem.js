@@ -3,7 +3,10 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const clothingItemSchema = new Schema({
-  owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
+  owner: { 
+    type: Schema.Types.ObjectId, 
+    ref: 'Profile' 
+  },
   name: {
     type: String,
     enum: ['Tops', 'Bottoms', 'Outerwear', 'Shoes', 'Accessories']

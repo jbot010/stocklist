@@ -1,7 +1,6 @@
 import { Brand } from "../models/brand.js"
 
 function newBrand(req, res) {
-  console.log("NEW BRAND VIEW!")
   Brand.find({})
   .then(brands => {
     res.render('brands/new', {
@@ -16,8 +15,6 @@ function newBrand(req, res) {
 }
 
 function create(req, res) {
-  console.log("CREATE NEW BRAND")
-  console.log(req.body)
   Brand.create(req.body)
   .then(brand => {
     res.redirect('/brands/new')

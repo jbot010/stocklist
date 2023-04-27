@@ -3,7 +3,6 @@ import { Brand } from '../models/brand.js'
 import { Color } from '../models/color.js'
 
 function index(req, res) {
-  console.log("ALL CLOTHING ITEMS")
   ClothingItem.find({})
   .populate([
     {path: 'colors'},
@@ -24,7 +23,6 @@ function index(req, res) {
 }
 
 function newClothingItem(req, res) {
-  console.log("NEW ITEM VIEW");
   Brand.find()
   .then(brands => {
     Color.find()
@@ -35,11 +33,18 @@ function newClothingItem(req, res) {
         colors: colors,
       })
     })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/")
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
   })
 }
 
 function create(req, res) {
-  console.log("CREATE ITEM")
   req.body.owner = req.user.profile._id
   req.body.favorite = !!req.body.favorite
   ClothingItem.create(req.body)  
@@ -58,14 +63,12 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  console.log("SHOW ITEM VIEW")
   ClothingItem.findById(req.params.clothingItemId)
   .populate([
     {path: 'colors'},
     {path: 'brands'}
   ])
   .then(clothingItem => {
-    console.log(clothingItem.colors, clothingItem.brands, "SHOW ME THE COLORS")
     res.render('clothingItems/show', {
       title: 'Item Detail',
       clothingItem: clothingItem,
@@ -81,7 +84,6 @@ function show(req, res) {
 
 
 function deleteClothingItem(req, res) {
-  console.log("DELETE ITEM")
   ClothingItem.findByIdAndDelete(req.params.clothingItemId)
   .then(clothingItem => {
     res.redirect('/clothingItems')
@@ -93,7 +95,6 @@ function deleteClothingItem(req, res) {
 }
 
 function edit(req, res) {
-  console.log("EDIT ITEM")
   ClothingItem.findById(req.params.clothingItemId)
   .populate([
     {path: 'colors'},
@@ -111,16 +112,23 @@ function edit(req, res) {
           brands: brands,
         })
       })
+      .catch(err => {
+        console.log(err)
+        res.redirect("/clothingItems")
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/clothingItems")
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/")
+    res.redirect("/clothingItems")
   })
 }
 
 function update(req, res) {
-  console.log("UPDATE ITEM!")
   req.body.favorite = !!req.body.favorite
   req.body.sold = !!req.body.sold
   for (let key in req.body) {
@@ -140,7 +148,6 @@ function update(req, res) {
 }
 
 function addToBrand(req, res) {
-  console.log("ADD BRAND!")
   ClothingItem.findById(req.params.clothingItemId)
   .then(clothingItem => {
     clothingItem.brands.push(req.body.brandId)
@@ -160,7 +167,6 @@ function addToBrand(req, res) {
 }
 
 function addToColor(req, res) {
-  console.log('ADD COLOR!!')
   ClothingItem.findById(req.params.clothingItemId)
   .then(clothingItem => {
     clothingItem.colors.push(req.body.colorId)
@@ -180,10 +186,8 @@ function addToColor(req, res) {
 }
 
 function updateBrand(req, res) {
-  console.log('UPDATE BRAND!')
   ClothingItem.findById(req.params.clothingItemId)
   .then(clothingItem => {
-    console.log(req.body.brandId)
     clothingItem.brands.push(req.body.brandId)
     clothingItem.save()
     .then(() => {

@@ -1,7 +1,6 @@
 import { Color } from "../models/color.js"
 
 function newColor(req, res) {
-  console.log("NEW COLOR VIEW!")
   Color.find({})
   .then(colors => {
     res.render('colors/new', {
@@ -16,8 +15,6 @@ function newColor(req, res) {
 }
 
 function create(req, res) {
-  console.log("CREATE NEW COLOR")
-  console.log(req.body)
   Color.create(req.body)
   .then(color => {
     res.redirect('/colors/new')
