@@ -6,7 +6,7 @@
 <section class="flex-column info-item-container">
   <% if (user) { %>
     <ul class="flex-column clothing-items-list">
-      <% clothingItems.forEach(clothingItem => { %>
+      <% clothingItem.forEach(clothingItem => { %>
         <% if (clothingItem.owner.equals(user?.profile._id)) { %>
           <li class="flex-row info-item">
             <div class="flex-column info-item-btns">
@@ -34,6 +34,16 @@
             </div>
         <div class="flex-column info-item-details">
           <div>Description: <%= clothingItem.description %></div>
+          <div>Brand(s):
+            <% clothingItem.brands.forEach(brand=> { %>
+              <%= brand.name %>
+            <% }) %>
+          </div>      
+          <div>Color(s):
+            <% clothingItem.colors.forEach(color=> { %>
+                <%= color.name %>
+              <% }) %>
+          </div>
           <div>Favorite: <%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
           <div>Status: <%= 
           clothingItem.status === 'Keep' && 'Keep ❤️' 

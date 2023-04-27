@@ -16,6 +16,16 @@
       </span>
     </div>
     <div>Description: <%= clothingItem.description %></div>
+    <div>Brand(s):
+      <% brands.forEach(brand=> { %>
+        <%= brand.name %>
+      <% }) %>
+    </div>
+    <div>Color(s):
+      <% colors.forEach(color=> { %>
+          <%= color.name %>
+        <% }) %>
+    </div>
     <div>Favorite: <%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
     <div>Status: <%= 
       clothingItem.status === 'Keep' && 'Keep ❤️' 
@@ -24,16 +34,6 @@
       || '' %>
     </div>
     <div>Sold: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
-    <div>Color(s):
-      <% colors.forEach(color=> { %>
-          <%= color.name %>
-        <% }) %>
-    </div>
-    <div>Brand(s):
-      <% brands.forEach(brand=> { %>
-        <%= brand.name %>
-      <% }) %>
-    </div>
     <% if (clothingItem.owner.equals(user?.profile._id)) { %>
       <a href="/clothingItems/<%= clothingItem._id %>/edit">
         <button id="edit-item-btn">Edit Item</button>

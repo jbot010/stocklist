@@ -5,10 +5,16 @@ import { Color } from '../models/color.js'
 function index(req, res) {
   console.log("ALL CLOTHING ITEMS")
   ClothingItem.find({})
+  .populate([
+    {path: 'colors'},
+    {path: 'brands'}
+  ])
   .then(clothingItems => {
     res.render('clothingItems/index', {
-      clothingItems,
       title: "All Items",
+      clothingItem: clothingItems,
+      colors: ClothingItem.colors,
+      brands: ClothingItem.brands, 
     })
   })
   .catch(err => {
