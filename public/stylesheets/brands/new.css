@@ -1,0 +1,10 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.brand-delete {
+  margin-left: 135px;
+  margin-top: -21px;
+  position: absolute;
+}

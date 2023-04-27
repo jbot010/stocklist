@@ -37,10 +37,6 @@ main {
   flex-direction: column;
 }
 
-.right {
-  margin-left: auto;
-}
-
 #nav-content {
   display: flex;
   margin: auto;
@@ -87,4 +83,17 @@ a:hover {
 
 #description-input {
   margin: 0 auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-icons {
+  height: 100px;
+  width: 100px;
+  padding: 20px;
+  border: 2px solid gray;
+  margin: 20px;
 }
