@@ -21,6 +21,7 @@ Project planning [here](https://trello.com/b/CzHyKepp/stocklist "Trello Board")
 * [Favicon](https://icons8.com/icon/tWqXz4h30AJ4/sneaker)
 * [Icons](https://icons8.com/icon/set/clothing/cotton)
 * [Font](https://fonts.google.com/specimen/Josefin+Sans?query=Josefin+Sans)
+* [Emojis](https://home.unicode.org/)
 
 
 ## Technologies used 💻

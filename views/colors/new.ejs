@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-
+<link rel="stylesheet" href="/stylesheets/brands/new.css"/>
 <%- include('../partials/nav') %>
 
 <main>
@@ -12,7 +12,7 @@
   </div>
   <h1><%= title %></h1>
   <p>Please first ensure that the Color is not in the list
-    <ul>
+    <ul class="flex-column">
       <% colors.forEach(function(color) { %>
         <option><%= color.name %></option>
         <form 
@@ -20,7 +20,7 @@
         class="delete-form"
         method="POST"
         >
-        <button class="btns" type="submit">🚫</button>
+        <button class="delete-btns" type="submit">🚫</button>
         </form>
       <% }) %>
     </ul>
