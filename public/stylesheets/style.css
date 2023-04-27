@@ -52,7 +52,7 @@ h1 {
   margin: auto;
 }
 
-#g-button {
+/* #g-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -62,7 +62,7 @@ h1 {
   justify-content: center;
   width: 100px;
   padding: 20px;
-}
+} */
 
 .btns {
   border-radius: 0px;
@@ -74,10 +74,6 @@ h1 {
 
 .btns:hover {
   background: white;
-}
-
-#description-input {
-  margin: 0 auto;
 }
 
 .flex-row {

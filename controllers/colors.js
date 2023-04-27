@@ -1,4 +1,4 @@
-import { Color } from "../models/color.js"
+import { Color } from '../models/color.js'
 
 function newColor(req, res) {
   Color.find({})
@@ -10,7 +10,7 @@ function newColor(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/clothingItems")
+    res.redirect('/clothingItems')
   })
 }
 
@@ -21,7 +21,7 @@ function create(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/clothingItems")
+    res.redirect('/clothingItems')
   })
 }
 
@@ -32,7 +32,7 @@ function deleteColor(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/colors/new")
+    res.redirect('/colors/new')
   })
 }
 

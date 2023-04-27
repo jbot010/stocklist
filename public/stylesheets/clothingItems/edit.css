@@ -1,9 +1,8 @@
 #new-form {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 5px;
-  line-height: 5px;
+  align-items: center;
 }
 
 .icon-top {

@@ -10,7 +10,7 @@ function index(req, res) {
   ])
   .then(clothingItems => {
     res.render('clothingItems/index', {
-      title: "All Items",
+      title: 'All Items',
       clothingItem: clothingItems,
       colors: ClothingItem.colors,
       brands: ClothingItem.brands, 
@@ -106,7 +106,7 @@ function edit(req, res) {
       Brand.find({_id: {$nin: clothingItem.brands}})
       .then(brands => {
         res.render('clothingItems/edit', {
-          title: "Edit Item",
+          title: 'Edit Item',
           clothingItem: clothingItem,
           colors: colors,
           brands: brands,
@@ -114,17 +114,17 @@ function edit(req, res) {
       })
       .catch(err => {
         console.log(err)
-        res.redirect("/clothingItems")
+        res.redirect('/clothingItems')
       })
     })
     .catch(err => {
       console.log(err)
-      res.redirect("/clothingItems")
+      res.redirect('/clothingItems')
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/clothingItems")
+    res.redirect('/clothingItems')
   })
 }
 

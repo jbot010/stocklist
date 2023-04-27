@@ -16,14 +16,6 @@ h2 {
   text-align: center;
 }
 
-/* .info-item-section {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: space-around;
-} */
-
 .info-item-btns {
   display: flex;
   max-width: 50%;

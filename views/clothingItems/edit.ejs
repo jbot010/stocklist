@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/clothingItems/edit.css"/>
+<link rel="stylesheet" href='/stylesheets/clothingItems/edit.css' />
 <%- include('../partials/nav') %>
 
 <main>
@@ -49,34 +49,33 @@
       <option value="Keep">Keep</option>
       <option value="Sell">Sell</option>
       <option value="Donate">Donate</option>
-    </select>
     <label for="sold-checkbox">
       Sold/Donated?
-      <input 
+    <input 
       type="checkbox" 
       name="sold"
       id="sold-checkbox"
       <%= clothingItem.sold ? 'checked' : '' %>
-      >
-      </select>
-      <div>Color(s):</div>
-      <select name="colorId" id="color-select">
-        <% clothingItem.colors.forEach(color => { %>
-          <option value="<%= color._id %>"><%= color.name %></option>
+    >
+    </select>
+    <div>Color(s):</div>
+    <select name="colorId" id="color-select">
+      <% clothingItem.colors.forEach(color => { %>
+        <option value="<%= color._id %>"><%= color.name %></option>
       <% }) %>
-        <% colors.forEach(color => { %>
-          <option value="<%= color._id %>"><%= color.name %></option>
+      <% colors.forEach(color => { %>
+        <option value="<%= color._id %>"><%= color.name %></option>
       <% }) %>
-      </select>
-      <div>Brand(s):</div>
-      <select name="brandId" id="brand-select">
-        <% clothingItem.brands.forEach(brand => { %>
-          <option value="<%= brand._id %>"><%= brand.name %></option>
+    </select>
+    <div>Brand(s):</div>
+    <select name="brandId" id="brand-select">
+      <% clothingItem.brands.forEach(brand => { %>
+        <option value="<%= brand._id %>"><%= brand.name %></option>
       <% }) %>
-        <% brands.forEach(brand => { %>
-          <option value="<%= brand._id %>"><%= brand.name %></option>
+      <% brands.forEach(brand => { %>
+        <option value="<%= brand._id %>"><%= brand.name %></option>
       <% }) %>
-      </select>
+    </select>
       <% if (clothingItem.owner.equals(user?.profile._id)) { %>
         <button class="btns" type="submit">Update Item</button>
       <% } %>
