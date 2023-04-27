@@ -1,12 +1,11 @@
 <%- include('../partials/html-head') %>
-
+<link rel="stylesheet" href="/stylesheets/clothingItems/show.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
-  <section>
-    <div>Category: </div>
-    <div><%= clothingItem.name %>
+  <section class="flex-column item-detail">
+    <div>Category: <%= clothingItem.name %>
       <span><%= 
         clothingItem.name === 'Tops' && '👕' 
         || clothingItem.name === 'Bottoms' && '👖' 
@@ -16,30 +15,28 @@
         || ''%>
       </span>
     </div>
-    <div>Description: </div>
-    <div><%= clothingItem.description %></div>
-    <div>Favorite: </div>
-    <div><%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
-    <div>Status: </div>
-    <div><%= 
+    <div>Description: <%= clothingItem.description %></div>
+    <div>Favorite: <%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
+    <div>Status: <%= 
       clothingItem.status === 'Keep' && 'Keep ❤️' 
       ||  clothingItem.status === 'Sell' && 'Sell 💲' 
       || clothingItem.status === 'Donate' && 'Donate ♻️' 
       || '' %>
     </div>
-    <div>Sold:</div>
-    <div><%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
-    <div>Color(s):</div>
+    <div>Sold: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
+    <div>Color(s):
       <% colors.forEach(color=> { %>
-        <%= color.name %>
+          <%= color.name %>
+        <% }) %>
+    </div>
+    <div>Brand(s):
+      <% brands.forEach(brand=> { %>
+        <%= brand.name %>
       <% }) %>
-    <div>Brand(s):</div>
-    <% brands.forEach(brand=> { %>
-      <%= brand.name %>
-    <% }) %>
+    </div>
     <% if (clothingItem.owner.equals(user?.profile._id)) { %>
       <a href="/clothingItems/<%= clothingItem._id %>/edit">
-        <button>Edit Item</button>
+        <button id="edit-item-btn">Edit Item</button>
     <% } %>
     </a>
   </section>

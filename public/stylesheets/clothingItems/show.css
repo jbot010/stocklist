@@ -1,0 +1,29 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.item-detail {
+  max-width: 100%;
+  min-width: 200px;
+  margin-left: 20px;
+  line-height: 30px;
+  border: 2px solid black;
+  padding: 1em;
+}
+
+#edit-item-btn {
+  margin:0 auto;
+  display:block;
+  margin-top: 15px;
+  border-radius: 0px;
+  text-transform: capitalize;
+  font-family: monospace;
+  font-size: 12px;
+  background: #54b3d6;
+}
+
+#edit-item-btn:hover {
+  background: white;
+}
