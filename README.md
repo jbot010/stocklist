@@ -32,6 +32,7 @@ Project planning [here](https://trello.com/b/CzHyKepp/stocklist "Trello Board")
 * JavaScript
 * HTML
 * CSS
+* Fly.io
 * Git
 * Chrome DevTools
 
