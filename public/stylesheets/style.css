@@ -53,6 +53,7 @@ h1 {
 #nav-content {
   display: flex;
   margin: auto;
+  padding-right: 10px;
 }
 
 .btns {
@@ -75,5 +76,5 @@ h1 {
   width: 100px;
   padding: 20px;
   border: 2px solid gray;
-  margin: 20px;
+  margin: 15px;
 }
