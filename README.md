@@ -3,9 +3,9 @@
 # Stocklist
 It can be difficult to keep track of all your possessions. With Stocklist, you can easily create a detailed inventory of your home items.
 
-To access all of your items, please log in. If you wish to add a new item to your Stocklist, you can do so by clicking on the "Add Item" link in the navigation bar. You can also add brands and colors to the master list, which can be accessed by multiple users.
+Begin by logging in to access all your items. If you wish to add a new item to your Stocklist, click the "Add Item" link in the navigation bar. You can also add brands and colors to the master list, which can be accessed by multiple users.
 
-If you want to view more information about an item, click on "More Details". You can update options such as your favorites or change the status of an item to "Keep/Sell/Donate" by selecting "Edit Item". If you would like to remove an item from your Stocklist, use the X button.
+Change the details of an item, using the "Edit Item" button and choose your desired preferences such as marking it as a favorite, changing its status, or editing its description. To remove an item from your Stocklist, use the X button.
 
 I created an inventory app because of the challenges associated with moving. Having personally moved several times, I understand the daunting task of evaluating belongings and determining what to keep, sell or donate. As someone who values organization, my goal for this app is to assist with organization and make the moving process smoother.
 
@@ -36,8 +36,9 @@ Project planning [here](https://trello.com/b/CzHyKepp/stocklist "Trello Board")
 * Chrome DevTools
 
 ## Next Steps 🔮
-- [ ] Share Stocklist profile
-- [ ] Compare Stocklist with other users
-- [ ] Add other categories
+- [ ] Add multiple colors and brands to an item
+- [ ] Add new categories
 - [ ] Add links of items in details
 - [ ] Add comments for items
+- [ ] Share Stocklist profile
+- [ ] Compare Stocklist with other users
