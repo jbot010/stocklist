@@ -8,11 +8,38 @@
   flex-direction: column;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding-left: 0px;
   line-height: 30px;
+  min-width: 100px;
 }
-.delete-btns {
-  margin-left: 135px;
-  margin-top: -27px;
-  position: absolute;
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-on-list {
+  justify-content: space-between;
+  padding: 1px;
+  width: 200px;
+}
+
+.icon-top {
+  justify-content: center;
+}
+
+#new-brand-form {
+  display: flex;
+  align-items: center;
+  margin-left: 45px;
+}
+
+#new-color-form {
+  display: flex;
+  align-items: center;
+  margin-left: 45px;
+}
+
+#name-input {
+  width: 150px;
+  margin-right: 13px;
 }

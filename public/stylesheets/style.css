@@ -19,9 +19,12 @@ body {
   margin: 0;
 }
 
-nav {
+.logged-in-nav {
   background-color: #f6f6f6;
   color: #1a1a1a;
+}
+
+nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,24 +55,10 @@ h1 {
   margin: auto;
 }
 
-/* #g-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  padding: 20px;
-} */
-
 .btns {
   border-radius: 0px;
   text-transform: capitalize;
   font-family:'Josefin Sans', sans-serif;
-  font-size: 12px;
-  background: #54b3d6;;
 }
 
 .btns:hover {

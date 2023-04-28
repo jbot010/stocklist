@@ -23,6 +23,11 @@ h2 {
   align-items: center;
 }
 
+.info-btns {
+  margin: 3px;
+  padding-top: 3px;
+}
+
 .info-item-details {
   max-width: 100%;
   min-width: 200px;
@@ -47,11 +52,8 @@ h2 {
   justify-content: center;
 }
 
-.btns {
-  margin: 3px;
-  padding-top: 3px;
-}
 
 span.emoji {
   font-size: 60px;
 }
+

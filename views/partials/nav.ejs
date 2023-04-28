@@ -3,7 +3,7 @@
   <% } %>
 </head>
 <body>
-  <nav>
+  <nav class="<%= user? 'logged-in-nav' : '' %>">
     <div class="nav-content">
     <% if (user) { %>
       <a class="nav-links" href="/clothingItems">Your Items</a>
@@ -12,7 +12,7 @@
       <a class="nav-links" href="/colors/new">Add Colors</a>
     </div>
       <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
+        <button class="btns" type="submit">Logout</button>
       </a>
     <% } else { %>
     <% } %>
