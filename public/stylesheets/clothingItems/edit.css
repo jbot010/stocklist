@@ -2,7 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 3px;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .icon-top {

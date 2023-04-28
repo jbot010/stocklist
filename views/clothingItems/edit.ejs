@@ -49,15 +49,16 @@
       <option value="Keep">Keep</option>
       <option value="Sell">Sell</option>
       <option value="Donate">Donate</option>
+    </select>
     <label for="sold-checkbox">
-      Sold/Donated?
+      Sold?
     <input 
       type="checkbox" 
       name="sold"
       id="sold-checkbox"
       <%= clothingItem.sold ? 'checked' : '' %>
     >
-    </select>
+    </label>
     <div>Color(s):</div>
     <select name="colorId" id="color-select">
       <% clothingItem.colors.forEach(color => { %>
@@ -77,7 +78,9 @@
       <% }) %>
     </select>
       <% if (clothingItem.owner.equals(user?.profile._id)) { %>
-        <button class="btns" type="submit">Update Item</button>
+        <div class="update-btn">
+          <button class="btns" type="submit">Update Item</button>
+        </div>
       <% } %>
   </form>
 </main>
