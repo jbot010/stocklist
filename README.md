@@ -1,4 +1,4 @@
-![Stocklist]( "stocklist-screenshot")
+![Stocklist](/public/images/stocklist-screenshot.png "stocklist-screensho")
 
 # Stocklist
 It can be difficult to keep track of all your possessions. With Stocklist, you can easily create a detailed inventory of your home items.
