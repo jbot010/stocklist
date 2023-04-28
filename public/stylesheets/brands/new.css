@@ -10,6 +10,7 @@
   margin: 0 auto;
   line-height: 30px;
   min-width: 100px;
+  padding-left: 8px;
 }
 
 .flex-row {
@@ -30,13 +31,13 @@
 #new-brand-form {
   display: flex;
   align-items: center;
-  margin-left: 45px;
+  margin-left: 10px;
 }
 
 #new-color-form {
   display: flex;
   align-items: center;
-  margin-left: 45px;
+  margin-left: 10px;
 }
 
 #name-input {
