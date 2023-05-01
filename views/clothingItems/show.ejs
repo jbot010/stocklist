@@ -31,7 +31,7 @@
     <div>Color(s):
       <% colors.forEach(color=> { %>
           <%= color.name %>
-        <% }) %>
+      <% }) %>
     </div>
     <div>Favorite: <%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
     <div>Status: <%= 
@@ -44,8 +44,8 @@
     <% if (clothingItem.owner.equals(user?.profile._id)) { %>
       <a href="/clothingItems/<%= clothingItem._id %>/edit">
         <button id="edit-item-btn">Edit Item</button>
+      </a>
     <% } %>
-    </a>
   </section>
 </main>
 
