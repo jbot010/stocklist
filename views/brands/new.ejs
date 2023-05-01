@@ -15,14 +15,14 @@
     <ul class="flex-column">
       <% brands.forEach(function(brand) { %>
         <div class="flex-row add-on-list">
-        <%= brand.name %>
-        <form 
-        action="/brands/<%= brand._id %>?_method=DELETE"
-        class="delete-form"
-        method="POST"
-        >
-        <button class="delete-btns" type="submit">❌</button>
-        </form>
+          <%= brand.name %>
+          <form 
+            action="/brands/<%= brand._id %>?_method=DELETE"
+            class="delete-form"
+            method="POST"
+          >
+            <button class="delete-btns" type="submit">❌</button>
+          </form>
         </div>
       <% }) %>
     </ul>
@@ -31,7 +31,7 @@
     id="new-brand-form" 
     action="/brands" 
     method="POST"
-    >
+  >
     <input type="text" name="name" id="name-input">
     <button class="add-btns" type="submit">➕</button>
   </form>

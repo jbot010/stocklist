@@ -15,14 +15,14 @@
     <ul class="flex-column">
       <% colors.forEach(function(color) { %>
         <div class="flex-row add-on-list">
-        <%= color.name %>
-        <form 
-        action="/colors/<%= color._id %>?_method=DELETE"
-        class="delete-form"
-        method="POST"
-        >
-        <button class="delete-btns" type="submit">❌</button>
-        </form>
+          <%= color.name %>
+          <form 
+            action="/colors/<%= color._id %>?_method=DELETE"
+            class="delete-form"
+            method="POST"
+          >
+          <button class="delete-btns" type="submit">❌</button>
+          </form>
         </div>
       <% }) %>
     </ul>
@@ -31,7 +31,7 @@
     id="new-color-form" 
     action="/colors" 
     method="POST"
-    >
+  >
     <input type="text" name="name" id="name-input">
     <button  class="add-btns" type="submit">➕</button>
   </form>
