@@ -17,14 +17,14 @@
         <% if (clothingItem.owner.equals(user?.profile._id)) { %>
           <li class="flex-row info-item">
             <div class="flex-column info-item-btns">
-                <span class="emoji">
-                  <%= clothingItem.name === 'Tops' && '👕' 
-                  || clothingItem.name === 'Bottoms' && '👖' 
-                  || clothingItem.name === 'Outerwear' && '🧥' 
-                  || clothingItem.name === 'Shoes' && '👟' 
-                  || clothingItem.name === 'Accessories' && '🧢' 
-                  || ''%>
-                </span>
+              <span class="emoji">
+                <%= clothingItem.name === 'Tops' && '👕' 
+                || clothingItem.name === 'Bottoms' && '👖' 
+                || clothingItem.name === 'Outerwear' && '🧥' 
+                || clothingItem.name === 'Shoes' && '👟' 
+                || clothingItem.name === 'Accessories' && '🧢' 
+                || ''%>
+              </span>
               <%= clothingItem.name %>
               <a href="/clothingitems/<%= clothingItem._id %>">
                 <button class="info-btns btns">More Details</button>
@@ -38,8 +38,8 @@
                   <button class="info-btns btns" type="submit">X</button>
                 </form>
                 <% } %>
-              </div>
-              <div class="flex-column info-item-details">
+            </div>
+            <div class="flex-column info-item-details">
               <div>Description: <%= clothingItem.description %></div>
               <div>Brand(s):
                 <% clothingItem.brands.forEach(brand=> { %>
@@ -58,7 +58,7 @@
                 || clothingItem.status === 'Donate' && 'Donate ♻️' 
                 || '' %>
               </div>
-              <div>Sold/Donated: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
+            <div>Sold/Donated: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
             </div>
           </li>
         <% } %>
