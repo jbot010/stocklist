@@ -30,14 +30,14 @@
       name="description" 
       id="description-input" 
       required
-      >
+    >
     <label for="favorite-checkbox">
       Favorite?
       <input 
       type="checkbox" 
       name="favorite"
       id="favorite-checkbox"
-      >
+    >
     </label>
     <label for="status-select">Status:</label>
     <select name="status" id="clothingItems-status-select">
@@ -49,13 +49,13 @@
     <select name="colorId" id="color-select">
       <% colors.forEach(color => { %>
         <option value="<%= color._id %>"><%= color.name %></option>
-    <% }) %>
+      <% }) %>
     </select>
     <div>Brand(s):</div>
     <select name="brandId" id="brand-select">
       <% brands.forEach(brand => { %>
         <option value="<%= brand._id %>"><%= brand.name %></option>
-    <% }) %>
+      <% }) %>
     </select>
     <button class="btns" type="submit">Add Item</button>
   </form>

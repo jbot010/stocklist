@@ -15,7 +15,7 @@
     id="new-form" 
     action="/clothingItems/<%= clothingItem._id %>?_method=PUT" 
     method="POST"
-    >
+  >
     <label for="clothingItems-select">Name:</label>
     <select name="name" id="clothingItems-select">
       <option value="<%= clothingItem.name %>"><%= clothingItem.name %></option>
@@ -33,14 +33,14 @@
       id="description-input"
       value="<%= clothingItem.description %>"
       required
-      >
+    >
     <label for="favorite-checkbox">
       Favorite?
       <input 
-      type="checkbox" 
-      name="favorite"
-      id="favorite-checkbox"
-      <%= clothingItem.favorite ? 'checked' : '' %>
+        type="checkbox" 
+        name="favorite"
+        id="favorite-checkbox"
+        <%= clothingItem.favorite ? 'checked' : '' %>
       >
     </label>
     <label for="status-select">Status:</label>
@@ -52,12 +52,12 @@
     </select>
     <label for="sold-checkbox">
       Sold?
-    <input 
-      type="checkbox" 
-      name="sold"
-      id="sold-checkbox"
-      <%= clothingItem.sold ? 'checked' : '' %>
-    >
+      <input 
+        type="checkbox" 
+        name="sold"
+        id="sold-checkbox"
+        <%= clothingItem.sold ? 'checked' : '' %>
+      >
     </label>
     <div>Color(s):</div>
     <select name="colorId" id="color-select">

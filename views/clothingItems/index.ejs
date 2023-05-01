@@ -17,48 +17,48 @@
         <% if (clothingItem.owner.equals(user?.profile._id)) { %>
           <li class="flex-row info-item">
             <div class="flex-column info-item-btns">
-              <span class="emoji">
-              <%= clothingItem.name === 'Tops' && '👕' 
-              || clothingItem.name === 'Bottoms' && '👖' 
-              || clothingItem.name === 'Outerwear' && '🧥' 
-              || clothingItem.name === 'Shoes' && '👟' 
-              || clothingItem.name === 'Accessories' && '🧢' 
-              || ''%>
-              </span>
-            <%= clothingItem.name %>
-            <a href="/clothingitems/<%= clothingItem._id %>">
-              <button class="info-btns btns">More Details</button>
-            <a href="/clothingitems/<%= clothingItem._id %>/edit">
-              <button class="info-btns btns">Edit Item</button>
-            </a>
-            <% if (clothingItem.owner.equals(user?.profile._id)) { %>
-              <form action="/clothingItems/<%= clothingItem._id %>?_method=DELETE"
-                method="POST"
+                <span class="emoji">
+                  <%= clothingItem.name === 'Tops' && '👕' 
+                  || clothingItem.name === 'Bottoms' && '👖' 
+                  || clothingItem.name === 'Outerwear' && '🧥' 
+                  || clothingItem.name === 'Shoes' && '👟' 
+                  || clothingItem.name === 'Accessories' && '🧢' 
+                  || ''%>
+                </span>
+              <%= clothingItem.name %>
+              <a href="/clothingitems/<%= clothingItem._id %>">
+                <button class="info-btns btns">More Details</button>
+              <a href="/clothingitems/<%= clothingItem._id %>/edit">
+                <button class="info-btns btns">Edit Item</button>
+              </a>
+              <% if (clothingItem.owner.equals(user?.profile._id)) { %>
+                <form action="/clothingItems/<%= clothingItem._id %>?_method=DELETE"
+                  method="POST"
                 >
-                <button class="info-btns btns" type="submit">X</button>
-              </form>
-              <% } %>
-            </div>
-            <div class="flex-column info-item-details">
-            <div>Description: <%= clothingItem.description %></div>
-            <div>Brand(s):
-            <% clothingItem.brands.forEach(brand=> { %>
-              <%= brand.name %>
-            <% }) %>
-            </div>      
-            <div>Color(s):
-            <% clothingItem.colors.forEach(color=> { %>
-                <%= color.name %>
-              <% }) %>
-            </div>
-            <div>Favorite: <%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
-            <div>Status: 
-            <%= clothingItem.status === 'Keep' && 'Keep ❤️' 
-            || clothingItem.status === 'Sell' && 'Sell 💲' 
-            || clothingItem.status === 'Donate' && 'Donate ♻️' 
-            || '' %>
-            </div>
-            <div>Sold/Donated: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
+                  <button class="info-btns btns" type="submit">X</button>
+                </form>
+                <% } %>
+              </div>
+              <div class="flex-column info-item-details">
+              <div>Description: <%= clothingItem.description %></div>
+              <div>Brand(s):
+                <% clothingItem.brands.forEach(brand=> { %>
+                  <%= brand.name %>
+                <% }) %>
+              </div>      
+              <div>Color(s):
+                <% clothingItem.colors.forEach(color=> { %>
+                  <%= color.name %>
+                <% }) %>
+              </div>
+              <div>Favorite: <%= clothingItem.favorite ? 'Yes ✅' : 'Nope 🚫' %></div>
+              <div>Status: 
+                <%= clothingItem.status === 'Keep' && 'Keep ❤️' 
+                || clothingItem.status === 'Sell' && 'Sell 💲' 
+                || clothingItem.status === 'Donate' && 'Donate ♻️' 
+                || '' %>
+              </div>
+              <div>Sold/Donated: <%= clothingItem.sold ? 'Yes 💸' : 'Nope 🚫' %></div>
             </div>
           </li>
         <% } %>
